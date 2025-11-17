@@ -1,0 +1,38 @@
+# Gradle files
+.gradle/
+build/
+**/build/
+gradlew
+gradlew.bat
+gradle/
+
+# Local configuration
+local.properties
+
+# Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Log files
+*.log
+
+# Generated files
+captures/
+output.json
+
+# Signatures and keystore (never upload sensitive keys)
+*.keystore
+*.jks
+
+# NDK
+obj/
+
+# Google Services (if sensitive, optional)
+google-services.json
+
+# Cache
+.cxx/
+.externalNativeBuild/
+.cache/
