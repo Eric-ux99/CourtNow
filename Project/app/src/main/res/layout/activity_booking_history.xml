@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookingHistory"
+
+    android:padding="16sp"
+    android:background="@color/green">
+
+    <TextView
+        android:id="@+id/textviewHistory"
+        android:fontFamily="@font/poppinsbold"
+        android:textColor="@color/yellow"
+        android:text="History"
+        android:padding="8sp"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_history"
+        android:layout_below="@id/textviewHistory"
+        android:layout_marginBottom="8sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+</RelativeLayout>

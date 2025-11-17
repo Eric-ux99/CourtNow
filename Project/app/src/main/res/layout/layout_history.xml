@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/yellow">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="8sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textviewBookingDate"
+            android:text="02/09/2022"
+            android:textColor="@color/yellow"
+            android:background="@color/green"
+            android:fontFamily="@font/poppinsmedium"
+            android:paddingLeft="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/textviewComplexName"
+            android:layout_marginTop="8sp"
+            android:text="Complex 1"
+            android:textAllCaps="true"
+            android:fontFamily="@font/poppinsbold"
+            android:textColor="@color/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textviewComplexAddress"
+                android:text="address of complex 1"
+                android:textColor="@color/green"
+                android:fontFamily="@font/poppinsmedium"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:layout_marginTop="4sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:text="Booking Information"
+            android:textColor="@color/green"
+            android:fontFamily="@font/poppinsbold"
+            android:textAllCaps="true"
+            android:layout_marginTop="8sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textviewBookingTimeText"
+                android:text="10AM at 09/09/2022"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/green"
+                android:layout_marginTop="4sp"
+                android:layout_marginLeft="4sp"
+                android:drawableStart="@drawable/ic_baseline_event_note_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textviewBookingCourtText"
+                android:text="Court"
+                android:fontFamily="@font/poppinsmedium"
+                android:textColor="@color/green"
+                android:layout_marginTop="2sp"
+                android:layout_marginLeft="4sp"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

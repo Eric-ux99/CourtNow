@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardCornerRadius="4sp"
+    android:id="@+id/card_court"
+    app:cardBackgroundColor="@color/yellow">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16sp">
+
+        <ImageView
+            android:id="@+id/txt_complex"
+            android:src="@drawable/ic_badminton_svgrepo_com__4_"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="60sp"
+            android:layout_height="60sp"/>
+
+        <TextView
+            android:id="@+id/courtName"
+            android:text="Court 1"
+            android:textSize="15sp"
+            android:layout_marginTop="10sp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/green"
+            android:fontFamily="@font/poppinsbold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

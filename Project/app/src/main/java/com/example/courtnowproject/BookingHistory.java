@@ -1,0 +1,134 @@
+package com.example.courtnowproject;
+
+import android.app.AlertDialog;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.media.metrics.Event;
+import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import dmax.dialog.SpotsDialog;
+
+public class BookingHistory extends AppCompatActivity {
+
+    @BindView(R.id.recycler_history)
+    RecyclerView recycler_history;
+    @BindView(R.id.textviewHistory)
+    TextView textviewHistory;
+
+    AlertDialog dialog;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_booking_history);
+
+        getSupportActionBar().setTitle("CourtNow Court Booking");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ButterKnife.bind(this);
+        dialog = new SpotsDialog.Builder().setContext(this).setCancelable(false).build();
+
+        initView();
+
+        loadUserBookingInformation();
+    }
+
+    private void loadUserBookingInformation() {
+        dialog.show();
+
+        CollectionReference userBooking = FirebaseFirestore.getInstance()
+                .collection("User")
+                .document(Common.currentUser.getUserID())
+                .collection("Booking");
+
+        userBooking.whereEqualTo("done", false)
+                .orderBy("timestamp", Query.Direction.DESCENDING)
+                .get()
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        EventBus.getDefault().post(new UserBookingLoadEvent(false, e.getMessage()));
+                    }
+                }).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if(task.isSuccessful())
+                        {
+                            List<BookingInformation> bookingInformationList = new ArrayList<>();
+                            for (DocumentSnapshot userBookingSnapShot:task.getResult())
+                            {
+                                BookingInformation bookingInformation = userBookingSnapShot.toObject(BookingInformation.class);
+                                bookingInformationList.add(bookingInformation);
+                            }
+
+                            EventBus.getDefault().post(new UserBookingLoadEvent(true, bookingInformationList));
+                        }
+                    }
+                });
+    }
+
+    private void initView() {
+        recycler_history.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recycler_history.setLayoutManager(layoutManager);
+        recycler_history.addItemDecoration(new DividerItemDecoration(this, layoutManager.getOrientation()));
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        EventBus.getDefault().unregister(this);
+        super.onStop();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void displayData(UserBookingLoadEvent event)
+    {
+        if(event.isSuccess())
+        {
+            HistoryAdapter adapter = new HistoryAdapter(this, event.getBookingInformationList());
+            recycler_history.setAdapter(adapter);
+
+            textviewHistory.setText(new StringBuilder("HISTORY (")
+                    .append(event.getBookingInformationList().size())
+                    .append(")"));
+        }
+        else
+        {
+            Toast.makeText(this,""+event.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+
+        dialog.dismiss();
+    }
+}

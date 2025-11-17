@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register"
+
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16sp"
+    android:background="@color/green">
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:text="CourtNow Badminton"
+        android:textSize="30sp"
+        android:fontFamily="@font/poppinsbold" />
+
+    <TextView
+        android:id="@+id/banner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textColor="@color/yellow"
+        android:fontFamily="@font/poppinsbold" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:src="@drawable/ic_user_svgrepo_com"
+        android:contentDescription="User Icon"/>
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:ems="10"
+        android:hint="Enter username"
+        android:backgroundTint="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/yellow"
+        android:layout_marginTop="30sp"
+        android:drawableEnd="@drawable/ic_baseline_person_24" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:ems="10"
+        android:hint="Enter email"
+        android:backgroundTint="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/yellow"
+        android:drawableEnd="@drawable/ic_baseline_email_24"/>
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:ems="10"
+        android:hint="Enter password"
+        android:backgroundTint="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/yellow"
+        android:inputType="textPassword"
+        android:drawableEnd="@drawable/ic_baseline_lock_24" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:ems="10"
+        android:textSize="14sp"
+        android:hint="Scan IC and press detect button to get age"
+        android:backgroundTint="@color/yellow"
+        android:textColorHint="@color/yellow"
+        android:textColor="@color/yellow"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <Button
+        android:id="@+id/btnScan"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Scan IC Number"
+        android:backgroundTint="@color/yellow"
+        android:layout_marginTop="10sp" />
+
+    <Button
+        android:id="@+id/btnDetect"
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Detect Age"
+        android:backgroundTint="@color/yellow" />
+
+    <Button
+        android:id="@+id/btnRegister"
+
+        android:layout_width="200sp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Register"
+        android:backgroundTint="@color/yellow" />
+
+    <TextView
+        android:id="@+id/textviewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Already registered ?\nClick here to login"
+        android:textColor="@color/yellow"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:clickable="true"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:visibility="invisible"
+        />
+
+</LinearLayout>

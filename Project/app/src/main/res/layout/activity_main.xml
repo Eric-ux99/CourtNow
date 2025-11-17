@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+
+    android:padding="16sp"
+    android:background="@color/green">
+
+    <TextView
+        android:id="@+id/textviewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Welcome to CourtNow Badminton Court Booking App"
+        android:textAlignment="center"
+        android:textColor="@color/yellow"
+        android:textSize="25sp" />
+
+    <ImageView
+        android:id="@+id/ImageCourt"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_below="@+id/textviewTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10sp"
+        android:scaleType="fitXY"
+        android:src="@drawable/shuttlecocks_badminton_racket_two_31668779" />
+
+
+    <TextView
+        android:id="@+id/textviewAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ImageCourt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20sp"
+        android:drawableLeft="@drawable/ic_baseline_description_24"
+        android:drawablePadding="10sp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="We provide the best badminton court in Ipoh, and aiming to provide a good booking experience for new and existing customer."
+        android:textColor="@color/yellow" />
+
+    <TextView
+        android:id="@+id/textviewHours"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20sp"
+        android:drawableLeft="@drawable/ic_baseline_access_time_filled_24"
+        android:drawablePadding="10sp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="Opened at 10AM till 10PM"
+        android:textColor="@color/yellow" />
+
+    <TextView
+        android:id="@+id/textviewPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewHours"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="25sp"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+        android:drawablePadding="10sp"
+        android:fontFamily="@font/poppinsmedium"
+        android:text="018 - 4745189"
+        android:textColor="@color/yellow" />
+
+
+    <Button
+        android:id="@+id/btnBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewPhone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Book Court" />
+
+    <Button
+        android:id="@+id/btnView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Booking History"
+        android:fontFamily="@font/poppinsbold"
+        android:backgroundTint="@color/yellow"
+        android:layout_below="@+id/btnBook"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/btnSignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="50sp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Sign Out" />
+
+
+
+</RelativeLayout>
