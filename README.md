@@ -8,7 +8,7 @@ Designed for convenience and accuracy, it allows users to check real-time court 
 * 🔥 Instant booking & cancellation
 * 🔄 Live database sync using Firebase Firestore
 * 📱 Clean and intuitive Android UI
-* 👤 User authentication (optional)
+* 👤 User authentication
 * 🗂️ Structured slot selection system
 * 💬 Smooth and responsive user experience
 
